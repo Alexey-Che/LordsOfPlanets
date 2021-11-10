@@ -8,4 +8,5 @@ public interface LordRepository extends JpaRepository<Lord, Long> {
 
     @Query("select l from Lord l where l.name = ?1")
     Lord getByName(String name);
+
 }
