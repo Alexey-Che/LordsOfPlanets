@@ -32,8 +32,8 @@ class LordServiceImplTest {
         Lord lord = new Lord(1L, "name", 20, Collections.emptyList());
         when(lordRepository.save(any(Lord.class)))
                 .thenReturn(lord);
-        LordDto lordDto = lordService.createLord(lordConverter.convertLordToLordDto(lord));
-        assertEquals(lordConverter.convertLordToLordDto(lord), lordDto);
+        LordDto lordDto = lordService.createLord(lordConverter.toDto(lord));
+        assertEquals(lordConverter.toDto(lord), lordDto);
     }
 
     @Test
@@ -42,7 +42,7 @@ class LordServiceImplTest {
         when(lordRepository.findAll())
                 .thenReturn(Collections.singletonList(lord));
         List<LordDto> idlers = lordService.findLordsWithoutPlanet();
-        assertEquals(Collections.singletonList(lordConverter.convertLordToLordDto(lord)),
+        assertEquals(Collections.singletonList(lordConverter.toDto(lord)),
                 idlers);
     }
 
@@ -52,7 +52,7 @@ class LordServiceImplTest {
         when(lordRepository.findAll())
                 .thenReturn(Collections.singletonList(lord));
         List<LordDto> youngest = lordService.findLordsWithoutPlanet();
-        assertEquals(Collections.singletonList(lordConverter.convertLordToLordDto(lord)),
+        assertEquals(Collections.singletonList(lordConverter.toDto(lord)),
                 youngest);
     }
 
@@ -62,7 +62,7 @@ class LordServiceImplTest {
         when(lordRepository.findAll())
                 .thenReturn(Collections.singletonList(lord));
         List<LordDto> listLordDto = lordService.findAll();
-        assertEquals(Collections.singletonList(lordConverter.convertLordToLordDto(lord)),
+        assertEquals(Collections.singletonList(lordConverter.toDto(lord)),
                 listLordDto);
     }
 }

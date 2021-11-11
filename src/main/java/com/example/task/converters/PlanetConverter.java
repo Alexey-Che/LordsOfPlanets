@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class PlanetConverter {
 
-    public PlanetDto convertPlanetToPlanetDto(Planet planet){
+    public PlanetDto toDto(Planet planet){
         PlanetDto planetDto = new PlanetDto();
         planetDto.setName(planet.getName());
         return planetDto;
     }
 
-    public Planet convertPlanetDtoToPlanet(PlanetDto planetDto){
+    public Planet toEntity(PlanetDto planetDto){
         Planet planet = new Planet();
         planet.setName(planetDto.getName());
         return planet;

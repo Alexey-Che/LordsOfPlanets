@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class LordConverter {
 
-    public LordDto convertLordToLordDto(Lord lord){
+    public LordDto toDto(Lord lord){
         LordDto lordDto = new LordDto();
         lordDto.setName(lord.getName());
         lordDto.setAge(lord.getAge());
@@ -23,7 +23,7 @@ public class LordConverter {
         return lordDto;
     }
 
-    public Lord convertLordDtoToLord(LordDto lordDto){
+    public Lord toEntity(LordDto lordDto){
         Lord lord = new Lord();
         lord.setName(lordDto.getName());
         lord.setAge(lordDto.getAge());

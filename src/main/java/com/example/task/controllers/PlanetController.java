@@ -1,6 +1,7 @@
 package com.example.task.controllers;
 
 import com.example.task.converters.PlanetConverter;
+import com.example.task.dto.LordDto;
 import com.example.task.dto.PlanetDto;
 import com.example.task.service.PlanetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +43,10 @@ public class PlanetController {
     }
 
     @PostMapping("/set")
+    @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    public void setLord(@RequestBody @Valid PlanetDto planetDto,
-                        @RequestParam("nameOfLord") String nameOfLord) {
-        planetService.setLordToRulePlanet(planetDto, nameOfLord);
+    public LordDto setLord(@RequestBody @Valid PlanetDto planetDto,
+                           @RequestParam("nameOfLord") String nameOfLord) {
+        return planetService.setLordToRulePlanet(planetDto, nameOfLord);
     }
 }

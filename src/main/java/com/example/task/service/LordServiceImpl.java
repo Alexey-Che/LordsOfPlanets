@@ -27,7 +27,7 @@ public class LordServiceImpl implements LordService {
 
     @Override
     public LordDto createLord(LordDto lordDto) {
-        return lordConverter.convertLordToLordDto(lordRepository.save(lordConverter.convertLordDtoToLord(lordDto)));
+        return lordConverter.toDto(lordRepository.save(lordConverter.toEntity(lordDto)));
     }
 
     @Override
@@ -35,7 +35,7 @@ public class LordServiceImpl implements LordService {
         return lordRepository.findAll()
                 .stream()
                 .filter(lord -> lord.getPlanets().isEmpty())
-                .map(lordConverter::convertLordToLordDto)
+                .map(lordConverter::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -45,7 +45,7 @@ public class LordServiceImpl implements LordService {
                 .stream()
                 .sorted(Comparator.comparing(Lord::getAge))
                 .limit(10)
-                .map(lordConverter::convertLordToLordDto)
+                .map(lordConverter::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -53,7 +53,7 @@ public class LordServiceImpl implements LordService {
     public List<LordDto> findAll() {
         return lordRepository.findAll()
                 .stream()
-                .map(lordConverter::convertLordToLordDto)
+                .map(lordConverter::toDto)
                 .collect(Collectors.toList());
     }
 }
