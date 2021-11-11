@@ -37,6 +37,9 @@ public class PlanetServiceImpl implements PlanetService{
 
     @Override
     public PlanetDto createPlanet(PlanetDto planetDto) {
+        if (planetRepository.getByName(planetDto.getName()) != null) {
+            return planetDto;
+        }
         return planetConverter.toDto(planetRepository.save(planetConverter.toEntity(planetDto)));
     }
 
