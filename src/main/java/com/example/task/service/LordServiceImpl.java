@@ -27,6 +27,9 @@ public class LordServiceImpl implements LordService {
 
     @Override
     public LordDto createLord(LordDto lordDto) {
+        if (lordRepository.getByName(lordDto.getName()) != null) {
+            return lordDto;
+        }
         return lordConverter.toDto(lordRepository.save(lordConverter.toEntity(lordDto)));
     }
 
