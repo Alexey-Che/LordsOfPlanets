@@ -1,8 +1,6 @@
 package com.example.task.service;
 
-import com.example.task.converters.LordConverter;
 import com.example.task.converters.PlanetConverter;
-import com.example.task.dto.LordDto;
 import com.example.task.dto.PlanetDto;
 import com.example.task.models.Lord;
 import com.example.task.models.Planet;
@@ -22,17 +20,14 @@ public class PlanetServiceImpl implements PlanetService{
     private final PlanetRepository planetRepository;
     private final LordRepository lordRepository;
     private final PlanetConverter planetConverter;
-    private final LordConverter lordConverter;
 
     @Autowired
     public PlanetServiceImpl(PlanetRepository planetRepository,
                              LordRepository lordRepository,
-                             PlanetConverter planetConverter,
-                             LordConverter lordConverter) {
+                             PlanetConverter planetConverter) {
         this.planetRepository = planetRepository;
         this.lordRepository = lordRepository;
         this.planetConverter = planetConverter;
-        this.lordConverter = lordConverter;
     }
 
     @Override

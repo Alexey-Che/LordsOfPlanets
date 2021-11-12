@@ -1,6 +1,5 @@
 package com.example.task.service;
 
-import com.example.task.dto.LordDto;
 import com.example.task.dto.PlanetDto;
 
 import java.util.List;
