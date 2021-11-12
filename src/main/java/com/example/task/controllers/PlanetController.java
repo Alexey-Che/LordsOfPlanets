@@ -1,7 +1,5 @@
 package com.example.task.controllers;
 
-import com.example.task.converters.PlanetConverter;
-import com.example.task.dto.LordDto;
 import com.example.task.dto.PlanetDto;
 import com.example.task.service.PlanetService;
 import org.springframework.beans.factory.annotation.Autowired;
