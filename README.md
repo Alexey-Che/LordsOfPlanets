@@ -21,5 +21,7 @@
 
 Написать тесты для этого функционала
 
+БД PostgreSql 
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/17746524-76d30b44-5fe9-4718-a5c4-e2c94a2d626f?action=collection%2Ffork&collection-url=entityId%3D17746524-76d30b44-5fe9-4718-a5c4-e2c94a2d626f%26entityType%3Dcollection%26workspaceId%3D50dd167e-5c15-4358-9b16-94be44af88a1)
 
