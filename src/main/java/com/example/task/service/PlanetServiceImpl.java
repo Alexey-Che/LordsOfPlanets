@@ -44,11 +44,11 @@ public class PlanetServiceImpl implements PlanetService{
     }
 
     @Override
-    public LordDto setLordToRulePlanet(PlanetDto planetDto, String nameOfLord) {
+    public PlanetDto setLordToRulePlanet(PlanetDto planetDto, String nameOfLord) {
         Lord lord = lordRepository.getByName(nameOfLord);
         Planet planet = planetRepository.getByName(planetDto.getName());
-        lord.getPlanets().add(planet);
-        return lordConverter.toDto(lordRepository.save(lord));
+        planet.setLord(lord);
+        return planetConverter.toDto(planetRepository.save(planet));
     }
 
     @Override

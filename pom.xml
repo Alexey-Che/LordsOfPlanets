@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<hibernate.validator>6.2.0.Final</hibernate.validator>
+		<configuration-processor>2.3.12.RELEASE</configuration-processor>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -56,7 +57,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
-			<version>2.3.12.RELEASE</version>
+			<version>${configuration-processor}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>

@@ -45,7 +45,7 @@ public class PlanetController {
     @PostMapping("/set")
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    public LordDto setLord(@RequestBody @Valid PlanetDto planetDto,
+    public PlanetDto setLord(@RequestBody @Valid PlanetDto planetDto,
                            @RequestParam("nameOfLord") String nameOfLord) {
         return planetService.setLordToRulePlanet(planetDto, nameOfLord);
     }

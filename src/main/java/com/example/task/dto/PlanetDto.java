@@ -11,4 +11,5 @@ public class PlanetDto {
     @NotBlank
     @Size(min = 2)
     private String name;
+    private String lord;
 }

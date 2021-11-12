@@ -19,10 +19,19 @@ public class Planet {
     @Column(name = "planet_id")
     private Long id;
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "lord_id")
+    private Lord lord;
 
     public Planet(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Planet(Long id, String name, Lord lord) {
+        this.id = id;
+        this.name = name;
+        this.lord = lord;
     }
 
     @Override

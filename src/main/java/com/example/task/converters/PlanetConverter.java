@@ -10,6 +10,9 @@ public class PlanetConverter {
     public PlanetDto toDto(Planet planet){
         PlanetDto planetDto = new PlanetDto();
         planetDto.setName(planet.getName());
+        if (planet.getLord() != null){
+            planetDto.setLord(planet.getLord().getName());
+        }
         return planetDto;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 public interface PlanetService {
 
     PlanetDto createPlanet(PlanetDto planetDto);
-    LordDto setLordToRulePlanet(PlanetDto planetDto, String nameOfLord);
+    PlanetDto setLordToRulePlanet(PlanetDto planetDto, String nameOfLord);
     void deletePlanet(String nameOfPlanet);
     List<PlanetDto> findAll();
 }
