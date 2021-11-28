@@ -2,7 +2,7 @@ package com.example.task.controllers;
 
 import com.example.task.dto.PlanetDto;
 import com.example.task.service.PlanetService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,14 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/planet")
+@RequiredArgsConstructor
 public class PlanetController {
 
     private final PlanetService planetService;
-
-    @Autowired
-    public PlanetController(PlanetService planetService) {
-        this.planetService = planetService;
-    }
 
     @GetMapping("/planets")
     @ResponseBody

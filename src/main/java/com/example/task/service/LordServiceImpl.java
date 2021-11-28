@@ -4,7 +4,7 @@ import com.example.task.converters.LordConverter;
 import com.example.task.dto.LordDto;
 import com.example.task.models.Lord;
 import com.example.task.repository.LordRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,16 +14,11 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class LordServiceImpl implements LordService {
 
     private final LordRepository lordRepository;
     private final LordConverter lordConverter;
-
-    @Autowired
-    public LordServiceImpl(LordRepository lordRepository, LordConverter lordConverter) {
-        this.lordRepository = lordRepository;
-        this.lordConverter = lordConverter;
-    }
 
     @Override
     public LordDto createLord(LordDto lordDto) {

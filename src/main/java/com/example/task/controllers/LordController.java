@@ -2,7 +2,7 @@ package com.example.task.controllers;
 
 import com.example.task.dto.LordDto;
 import com.example.task.service.LordService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,14 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/lord")
+@RequiredArgsConstructor
 public class LordController {
 
     private final LordService lordService;
-
-    @Autowired
-    public LordController(LordService lordService) {
-        this.lordService = lordService;
-    }
 
     @GetMapping("/lords")
     public List<LordDto> getLords() {
